@@ -1,0 +1,4 @@
+tweepy
+python-dotenv
+babel
+num2words

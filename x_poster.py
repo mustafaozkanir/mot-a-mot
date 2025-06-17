@@ -1,7 +1,8 @@
 import os
 import tweepy
-from dotenv import load_dotenv
 
+from dotenv import load_dotenv
+from date_generator import generate_date
 # Load credentials from .env file
 load_dotenv()
 
@@ -28,17 +29,8 @@ def post_to_twitter(text):
         print("❌ Error posting tweet:", e)
 
 if __name__ == "__main__":
-    # Load post content from file (or use your own string)
-    try:
-        with open("latest_post.txt", "r", encoding="utf-8") as f:
-            tweet_text = f.read().strip()
-    except FileNotFoundError:
-        tweet_text = "Bonjour ! Ceci est un tweet automatique. 🇫🇷"
 
-    """
-    if len(tweet_text) > 280:
-        tweet_text = tweet_text[:277] + "..."
-        print("⚠️ Tweet was too long. Truncated to 280 characters.")
-    """
+    tweet_text = "🗓️  𝐓𝐨𝐝𝐚𝐲'𝐬 𝐃𝐚𝐭𝐞 𝐢𝐧 𝐅𝐫𝐞𝐧𝐜𝐡: \n" + generate_date("french") + "\n" + generate_date("english")
+    print(tweet_text)
     
     post_to_twitter(tweet_text)
