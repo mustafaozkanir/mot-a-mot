@@ -2,7 +2,7 @@ name: motàmot
 
 on:
   schedule:
-    - cron: "28 10 * * *"  # Runs every day at 10:30 UTC (13:30 Türkiye time)
+    - cron: "00 11 * * *"  # Runs every day at 11:00 UTC (14:00 Türkiye time)
   workflow_dispatch:      # Also allow manual runs from GitHub UI
 
 jobs:
