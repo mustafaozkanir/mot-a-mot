@@ -1,8 +1,8 @@
-name: Daily Tweet Bot
+name: motàmot
 
 on:
   schedule:
-    - cron: "15 10 * * *"  # Runs every day at 10:30 UTC (13:30 Türkiye time)
+    - cron: "22 10 * * *"  # Runs every day at 10:30 UTC (13:30 Türkiye time)
   workflow_dispatch:      # Also allow manual runs from GitHub UI
 
 jobs:
@@ -30,4 +30,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
         run: |
-          python post_tweet.py
+          python x_poster.py
